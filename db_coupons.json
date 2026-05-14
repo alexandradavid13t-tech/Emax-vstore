@@ -1,0 +1,65 @@
+{
+  "table": "coupons",
+  "records": [
+    {
+      "id": 1,
+      "code": "WELCOME20",
+      "description": "20% off your first order",
+      "discount_type": "percentage",
+      "discount_value": 20.0,
+      "minimum_order": 50.0,
+      "maximum_discount": 100.0,
+      "usage_limit": 1000,
+      "usage_count": 456,
+      "starts_at": "2026-01-01T00:00:00Z",
+      "expires_at": "2026-12-31T23:59:59Z",
+      "is_active": true,
+      "created_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "code": "EMAX50",
+      "description": "$50 off orders over $200",
+      "discount_type": "fixed_amount",
+      "discount_value": 50.0,
+      "minimum_order": 200.0,
+      "maximum_discount": 50.0,
+      "usage_limit": 500,
+      "usage_count": 234,
+      "starts_at": "2026-03-01T00:00:00Z",
+      "expires_at": "2026-06-30T23:59:59Z",
+      "is_active": true,
+      "created_at": "2026-03-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "code": "FLASH15",
+      "description": "15% off flash sale",
+      "discount_type": "percentage",
+      "discount_value": 15.0,
+      "minimum_order": 0,
+      "maximum_discount": 75.0,
+      "usage_limit": 200,
+      "usage_count": 189,
+      "starts_at": "2026-05-10T00:00:00Z",
+      "expires_at": "2026-05-20T23:59:59Z",
+      "is_active": true,
+      "created_at": "2026-05-10T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "code": "VIP30",
+      "description": "30% off for VIP members",
+      "discount_type": "percentage",
+      "discount_value": 30.0,
+      "minimum_order": 100.0,
+      "maximum_discount": 200.0,
+      "usage_limit": 100,
+      "usage_count": 45,
+      "starts_at": "2026-04-01T00:00:00Z",
+      "expires_at": "2026-12-31T23:59:59Z",
+      "is_active": true,
+      "created_at": "2026-04-01T00:00:00Z"
+    }
+  ]
+}

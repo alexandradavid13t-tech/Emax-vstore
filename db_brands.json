@@ -1,0 +1,65 @@
+{
+  "table": "brands",
+  "records": [
+    {
+      "id": 1,
+      "name": "EMAX Original",
+      "slug": "emax-original",
+      "description": "EMAX's own premium line",
+      "logo": "",
+      "website": "https://emax.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "TechPro",
+      "slug": "techpro",
+      "description": "Leading technology brand",
+      "logo": "",
+      "website": "https://techpro.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "LuxeStyle",
+      "slug": "luxestyle",
+      "description": "Luxury fashion brand",
+      "logo": "",
+      "website": "https://luxestyle.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "HomeCraft",
+      "slug": "homecraft",
+      "description": "Premium home goods",
+      "logo": "",
+      "website": "https://homecraft.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "name": "SoundWave",
+      "slug": "soundwave",
+      "description": "High-fidelity audio equipment",
+      "logo": "",
+      "website": "https://soundwave.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "name": "TimePiece",
+      "slug": "timepiece",
+      "description": "Swiss-inspired watchmaker",
+      "logo": "",
+      "website": "https://timepiece.com",
+      "is_active": true,
+      "created_at": "2026-01-15T10:00:00Z"
+    }
+  ]
+}

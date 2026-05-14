@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EMAX - Premium Modern E-Commerce. Luxury products, futuristic design, seamless shopping experience.">
+    <meta name="keywords" content="EMAX, e-commerce, luxury, premium, futuristic, shopping, products">
+    <meta name="author" content="EMAX">
+    <title>EMAX | Premium E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="loader-ring"></div>
+            <div class="loader-text">EMAX</div>
+            <div class="loader-subtext">Loading Premium Experience...</div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Product Details Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content glass">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <span id="modal-category" class="modal-category"></span>
+                    <h2 id="modal-title"></h2>
+                    <div class="modal-price" id="modal-price"></div>
+                    <p id="modal-desc"></p>
+                    <div class="modal-actions">
+                        <a id="modal-buy" href="#" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Buy Now
+                        </a>
+                        <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobile-sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="logo-text">EMAX</span>
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home" onclick="toggleSidebar()">Home</a>
+            <a href="#featured" onclick="toggleSidebar()">Products</a>
+            <a href="#categories" onclick="toggleSidebar()">Categories</a>
+            <a href="#about" onclick="toggleSidebar()">About</a>
+            <a href="#contact" onclick="toggleSidebar()">Contact</a>
+            <a href="admin.html" onclick="toggleSidebar()">Admin</a>
+        </nav>
+    </div>
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fas fa-crown"></i></span>
+                <span class="logo-text">EMAX</span>
+            </a>
+
+            <nav class="nav-links desktop-nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#featured" class="nav-link">Products</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="admin.html" class="nav-link nav-admin">Admin</a>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search products...">
+                    <button class="search-btn" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="cart-btn" onclick="showCart()" title="Cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="cart-close" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <div class="empty-cart">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-basket"></i>
+                </div>
+                <p>Your cart is empty</p>
+                <span>Browse our premium collection</span>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="closeCart()"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-pulse"></span>
+                <span>Premium Collection 2026</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Experience</span>
+                <span class="title-line gold">Luxury</span>
+                <span class="title-line">Redefined</span>
+            </h1>
+            <p class="hero-subtitle">Discover our curated collection of premium products. Where elegance meets innovation.</p>
+            <div class="hero-buttons">
+                <a href="#featured" class="btn btn-primary btn-glow">
+                    <span>Explore Collection</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    <span>Learn More</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99%</span>
+                    <span class="stat-label">Satisfaction</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="section products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Collection</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-desc">Handpicked premium items for the discerning customer</p>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all" onclick="filterProducts('all')">
+                    <i class="fas fa-th-large"></i> All
+                </button>
+                <button class="filter-btn" data-filter="electronics" onclick="filterProducts('electronics')">
+                    <i class="fas fa-laptop"></i> Electronics
+                </button>
+                <button class="filter-btn" data-filter="fashion" onclick="filterProducts('fashion')">
+                    <i class="fas fa-tshirt"></i> Fashion
+                </button>
+                <button class="filter-btn" data-filter="accessories" onclick="filterProducts('accessories')">
+                    <i class="fas fa-gem"></i> Accessories
+                </button>
+                <button class="filter-btn" data-filter="home" onclick="filterProducts('home')">
+                    <i class="fas fa-home"></i> Home
+                </button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="products-grid">
+                <!-- Products rendered by JavaScript -->
+            </div>
+
+            <div class="no-results" id="no-results" style="display:none;">
+                <div class="no-results-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section categories-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Browse</span>
+                <h2 class="section-title">Categories</h2>
+                <p class="section-desc">Explore our diverse range of premium categories</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card glass" onclick="filterProducts('electronics')">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3>Electronics</h3>
+                    <p>Cutting-edge technology</p>
+                    <span class="category-count" id="cat-electronics">0 items</span>
+                </div>
+                <div class="category-card glass" onclick="filterProducts('fashion')">
+                    <div class="category-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Fashion</h3>
+                    <p>Style that defines you</p>
+                    <span class="category-count" id="cat-fashion">0 items</span>
+                </div>
+                <div class="category-card glass" onclick="filterProducts('accessories')">
+                    <div class="category-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Accessories</h3>
+                    <p>Elegant finishing touches</p>
+                    <span class="category-count" id="cat-accessories">0 items</span>
+                </div>
+                <div class="category-card glass" onclick="filterProducts('home')">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home</h3>
+                    <p>Luxury living spaces</p>
+                    <span class="category-count" id="cat-home">0 items</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="EMAX Store">
+                        <div class="about-img-overlay"></div>
+                    </div>
+                    <div class="about-floating-card glass">
+                        <i class="fas fa-award"></i>
+                        <div>
+                            <span class="floating-number">5+</span>
+                            <span class="floating-text">Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Crafting Premium Experiences Since 2021</h2>
+                    <p>EMAX is more than just an e-commerce platform. We are curators of luxury, bringing you the finest products from around the world. Our commitment to quality and customer satisfaction has made us a trusted name in premium retail.</p>
+                    <p>Every product in our collection is handpicked and verified for authenticity, ensuring you receive only the best.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Authentic Products</h4>
+                                <p>100% genuine guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div>
+                                <h4>Fast Delivery</h4>
+                                <p>Worldwide shipping</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4>24/7 Support</h4>
+                                <p>Always here to help</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Get in Touch</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-desc">We would love to hear from you</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>+234 906 654 2856</p>
+                        <a href="https://wa.me/2349066542856" target="_blank" class="contact-link">Chat Now</a>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>hello@emax.com</p>
+                        <a href="mailto:hello@emax.com" class="contact-link">Send Email</a>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Location</h3>
+                        <p>Lagos, Nigeria</p>
+                        <span class="contact-link">Visit Us</span>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper glass">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required placeholder="How can we help?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required placeholder="Your message..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <a href="https://wa.me/2349066542856" target="_blank" class="fab-btn" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="#home" class="logo">
+                            <span class="logo-icon"><i class="fas fa-crown"></i></span>
+                            <span class="logo-text">EMAX</span>
+                        </a>
+                        <p>Premium e-commerce experience with curated luxury products. Quality meets elegance.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#featured">Products</a>
+                        <a href="#categories">Categories</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Categories</h4>
+                        <a href="#" onclick="filterProducts('electronics')">Electronics</a>
+                        <a href="#" onclick="filterProducts('fashion')">Fashion</a>
+                        <a href="#" onclick="filterProducts('accessories')">Accessories</a>
+                        <a href="#" onclick="filterProducts('home')">Home</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Support</h4>
+                        <a href="#">FAQ</a>
+                        <a href="#">Shipping</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="admin.html">Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 EMAX. All rights reserved. Crafted with excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

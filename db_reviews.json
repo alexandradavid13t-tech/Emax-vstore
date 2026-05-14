@@ -1,0 +1,77 @@
+{
+  "table": "reviews",
+  "records": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "user_id": 3,
+      "rating": 5,
+      "title": "Amazing sound quality!",
+      "comment": "Best headphones I've ever owned. The noise cancellation is incredible and battery lasts forever.",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 45,
+      "created_at": "2026-05-10T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "product_id": 1,
+      "user_id": 4,
+      "rating": 4,
+      "title": "Great but pricey",
+      "comment": "Excellent build quality and sound. A bit expensive but worth it for the premium feel.",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 23,
+      "created_at": "2026-05-12T14:00:00Z"
+    },
+    {
+      "id": 3,
+      "product_id": 2,
+      "user_id": 3,
+      "rating": 5,
+      "title": "Stunning timepiece",
+      "comment": "The leather strap feels premium and the Swiss movement is incredibly accurate. Highly recommend!",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 67,
+      "created_at": "2026-05-11T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "product_id": 5,
+      "user_id": 4,
+      "rating": 5,
+      "title": "Most comfortable sneakers",
+      "comment": "Italian leather makes all the difference. These are the most comfortable sneakers I've worn.",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 89,
+      "created_at": "2026-05-13T11:00:00Z"
+    },
+    {
+      "id": 5,
+      "product_id": 7,
+      "user_id": 5,
+      "rating": 4,
+      "title": "Beautiful craftsmanship",
+      "comment": "The leather quality is outstanding. Perfect for work and travel.",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 34,
+      "created_at": "2026-05-14T08:00:00Z"
+    },
+    {
+      "id": 6,
+      "product_id": 3,
+      "user_id": 3,
+      "rating": 5,
+      "title": "Perfect for summer",
+      "comment": "Lightweight, stylish, and the UV protection works great. Love the titanium frame!",
+      "is_verified_purchase": true,
+      "is_approved": true,
+      "helpful_count": 56,
+      "created_at": "2026-05-09T16:00:00Z"
+    }
+  ]
+}
